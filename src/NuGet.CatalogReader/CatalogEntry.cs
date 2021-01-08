@@ -23,6 +23,7 @@ namespace NuGet.CatalogReader
             string commitId,
             DateTimeOffset commitTs,
             string id,
+            string description,
             NuGetVersion version,
             ServiceIndexResourceV3 serviceIndex,
             Func<Uri, CancellationToken, Task<JObject>> getJson,
@@ -99,7 +100,7 @@ namespace NuGet.CatalogReader
         {
             return _getJson(Uri, token);
         }
-        
+
         /// <summary>
         /// Compare by date.
         /// </summary>
