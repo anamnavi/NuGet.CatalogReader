@@ -22,6 +22,7 @@ namespace NuGet.CatalogReader
         internal PackageEntry(
             string id,
             NuGetVersion version,
+            string description,
             ServiceIndexResourceV3 serviceIndex,
             Func<Uri, CancellationToken, Task<JObject>> getJson,
             Func<Uri, CancellationToken, Task<NuspecReader>> getNuspec,
@@ -29,6 +30,7 @@ namespace NuGet.CatalogReader
         {
             Id = id;
             Version = version;
+            Description = description;
             _getJson = getJson;
             _serviceIndex = serviceIndex;
             _getNuspec = getNuspec;
@@ -44,6 +46,11 @@ namespace NuGet.CatalogReader
         /// Package version.
         /// </summary>
         public NuGetVersion Version { get; }
+
+        /// <summary>
+        /// Package description
+        /// </summary>
+        public string Description { get; }
 
         /// <summary>
         /// Nupkg download Url.
