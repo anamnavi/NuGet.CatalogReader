@@ -182,6 +182,7 @@ namespace NuGet.CatalogReader
             return new PackageEntry(
                 id,
                 version,
+                description,
                 _serviceIndex,
                 GetJson,
                 GetNuspec,
